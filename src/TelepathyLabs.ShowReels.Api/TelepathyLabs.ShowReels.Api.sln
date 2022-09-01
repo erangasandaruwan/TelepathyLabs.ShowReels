@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Api", "TelepathyLabs.ShowReels.Api.csproj", "{0EF8D421-7050-49D4-B94C-A5997F70DE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Core", "..\TelepathyLabs.ShowReels.Core\TelepathyLabs.ShowReels.Core.csproj", "{1F49B805-1061-4322-A498-C23CAB121226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Domain", "..\TelepathyLabs.ShowReels.Domain\TelepathyLabs.ShowReels.Domain.csproj", "{31B69031-66BF-47B3-A374-84423B5027F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Migrations", "..\TelepathyLabs.ShowReels.Migrations\TelepathyLabs.ShowReels.Migrations.csproj", "{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EF8D421-7050-49D4-B94C-A5997F70DE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EF8D421-7050-49D4-B94C-A5997F70DE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EF8D421-7050-49D4-B94C-A5997F70DE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EF8D421-7050-49D4-B94C-A5997F70DE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F49B805-1061-4322-A498-C23CAB121226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F49B805-1061-4322-A498-C23CAB121226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F49B805-1061-4322-A498-C23CAB121226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F49B805-1061-4322-A498-C23CAB121226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B69031-66BF-47B3-A374-84423B5027F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B69031-66BF-47B3-A374-84423B5027F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B69031-66BF-47B3-A374-84423B5027F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B69031-66BF-47B3-A374-84423B5027F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2168357-F385-4C78-BFBF-1DC5AC3FBDD0}
+	EndGlobalSection
+EndGlobal

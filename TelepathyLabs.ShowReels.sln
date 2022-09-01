@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{447650B8-D461-46CE-9A87-A5629F26F281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{114A2167-B157-42F9-BA46-732E1155C728}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelepathyLabs.ShowReels.Api", "src\TelepathyLabs.ShowReels.Api\TelepathyLabs.ShowReels.Api.csproj", "{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelepathyLabs.ShowReels.Domain", "src\TelepathyLabs.ShowReels.Domain\TelepathyLabs.ShowReels.Domain.csproj", "{438C9D2D-68AD-4436-9FA7-580360302145}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelepathyLabs.ShowReels.Core", "src\TelepathyLabs.ShowReels.Core\TelepathyLabs.ShowReels.Core.csproj", "{38D01191-0EE1-4615-A482-10E2475ECAC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelepathyLabs.ShowReels.Tests", "test\TelepathyLabs.ShowReels.Tests\TelepathyLabs.ShowReels.Tests.csproj", "{D340210B-DA71-40A5-B500-1D744EAF7BD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{438C9D2D-68AD-4436-9FA7-580360302145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438C9D2D-68AD-4436-9FA7-580360302145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438C9D2D-68AD-4436-9FA7-580360302145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438C9D2D-68AD-4436-9FA7-580360302145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D01191-0EE1-4615-A482-10E2475ECAC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D01191-0EE1-4615-A482-10E2475ECAC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D01191-0EE1-4615-A482-10E2475ECAC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D01191-0EE1-4615-A482-10E2475ECAC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D340210B-DA71-40A5-B500-1D744EAF7BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D340210B-DA71-40A5-B500-1D744EAF7BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D340210B-DA71-40A5-B500-1D744EAF7BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D340210B-DA71-40A5-B500-1D744EAF7BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B6AC5C85-F7AB-4D18-9C70-EC8C970CEF1B} = {447650B8-D461-46CE-9A87-A5629F26F281}
+		{438C9D2D-68AD-4436-9FA7-580360302145} = {447650B8-D461-46CE-9A87-A5629F26F281}
+		{38D01191-0EE1-4615-A482-10E2475ECAC6} = {447650B8-D461-46CE-9A87-A5629F26F281}
+		{D340210B-DA71-40A5-B500-1D744EAF7BD2} = {114A2167-B157-42F9-BA46-732E1155C728}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAE34425-1C87-4FA8-8FD0-A2DD22D71004}
+	EndGlobalSection
+EndGlobal
