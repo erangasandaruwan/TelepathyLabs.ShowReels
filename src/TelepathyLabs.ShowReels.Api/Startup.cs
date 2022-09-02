@@ -10,22 +10,27 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using TelepathyLabs.ShowReels.Domain.Repository;
 using AutoMapper;
+using NLog;
+using System.IO;
 
 namespace TelepathyLabs.ShowReels.Api
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConfigureShowReelDomain();
+            services.ConfigureLogger();
+            services.ConfigureHandlers();
+            services.ConfigureDomainServices();
+            services.ConfigureRepositores();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
 
@@ -41,7 +46,6 @@ namespace TelepathyLabs.ShowReels.Api
                         sqlOptions.MigrationsAssembly("TelepathyLabs.ShowReels.Domain");
                     });
             });
-
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -63,6 +67,13 @@ namespace TelepathyLabs.ShowReels.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(policy => 
+                policy.WithOrigins("http://localhost:4200")
+                      .AllowAnyMethod()
+                      .AllowAnyHeader());
+
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
             app.UseEndpoints(endpoints =>
             {

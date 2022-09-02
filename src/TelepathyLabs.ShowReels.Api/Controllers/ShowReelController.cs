@@ -4,6 +4,7 @@ using System;
 using TelepathyLabs.ShowReels.Api.Dto;
 using TelepathyLabs.ShowReels.Api.Handler.ShowReels;
 using TelepathyLabs.ShowReels.Core;
+using TelepathyLabs.ShowReels.Core.Log;
 
 namespace TelepathyLabs.ShowReels.Api.Controllers
 {
@@ -13,9 +14,12 @@ namespace TelepathyLabs.ShowReels.Api.Controllers
     {
         private readonly IShowReelCreateHandler _createHandler;
         private readonly IShowReelGetHandler _getHandler;
+        private readonly ILoggerManager _logger;
 
-        public ShowReelController(IShowReelCreateHandler createHandler, IShowReelGetHandler getHandler)
+        public ShowReelController(IShowReelCreateHandler createHandler, 
+            IShowReelGetHandler getHandler, ILoggerManager logger)
         {
+            _logger = logger;
             _getHandler = getHandler;
             _createHandler = createHandler;
         }
@@ -32,6 +36,7 @@ namespace TelepathyLabs.ShowReels.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message + "/n" + ex.StackTrace);
                 var errorResponse = new ObjectResult("Something went wrong. Please try again shortly or contact administrator.");
                 errorResponse.StatusCode = 500;
                 return errorResponse;
@@ -47,6 +52,7 @@ namespace TelepathyLabs.ShowReels.Api.Controllers
             try
             {
                 var response = _createHandler.Handle(request);
+                _logger.LogInfo("Showreel created successfully.");
                 return new ObjectResult(response);
             }
             catch (ShowReelException ex)
@@ -55,6 +61,7 @@ namespace TelepathyLabs.ShowReels.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message + "/n" + ex.StackTrace);
                 var errorResponse = new ObjectResult("Something went wrong. Please try again shortly or contact administrator.");
                 errorResponse.StatusCode = 500;
                 return errorResponse;

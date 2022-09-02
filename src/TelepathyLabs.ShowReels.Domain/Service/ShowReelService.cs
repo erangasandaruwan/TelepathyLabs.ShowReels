@@ -39,6 +39,9 @@ namespace TelepathyLabs.ShowReels.Domain.Service
             if (!showReel.VideoClips.IsStartEndFrameRateMatch())
                 throw new ShowReelException("Frame rates for start time and end time should match for all videos.");
 
+            // Check all videos' number of frames are less than frames per second
+            if (!showReel.VideoClips.IsValidFrameRate())
+                throw new ShowReelException("Frame rates for start time and end time should match for all videos.");
 
 
             return _showReelRepository.Create(showReel);

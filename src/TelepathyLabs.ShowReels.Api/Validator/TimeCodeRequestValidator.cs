@@ -14,10 +14,16 @@ namespace TelepathyLabs.ShowReels.Api.Validator
             RuleFor(x => x.Hours)
                 .NotNull()
                 .WithMessage("Hours cannot be null or empty.");
+            RuleFor(x => x.Hours)
+                .GreaterThan(0)
+                .WithMessage("Hours cannot be less than zero.");
 
             RuleFor(x => x.Minutes)
                 .NotNull().NotEmpty()
                 .WithMessage("Minutes cannot be null or empty.");
+            RuleFor(x => x.Minutes)
+                .GreaterThan(0)
+                .WithMessage("Seconds cannot be less than zero.");
             RuleFor(x => x.Minutes)
                 .LessThan(60)
                 .WithMessage("Minute should be less than 60.");
@@ -35,8 +41,8 @@ namespace TelepathyLabs.ShowReels.Api.Validator
             RuleFor(x => x.Frames)
                 .NotNull()
                 .WithMessage("Frames cannot be null or empty.");
-            RuleFor(x => x.Seconds)
-                .LessThan(0)
+            RuleFor(x => x.Frames)
+                .GreaterThan(0)
                 .WithMessage("Frames cannot be less than zero.");
         }
     }

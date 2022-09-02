@@ -1,6 +1,11 @@
 ﻿namespace TelepathyLabs.ShowReels.Core.Model.EntityBase
 {
-    public class BaseModel
+    public interface IModelBase
+    {
+
+    }
+
+    public class BaseModel : IModelBase
     {
         public int? Id { get; set; }
     }

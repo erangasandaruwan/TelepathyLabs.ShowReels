@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TelepathyLabs.ShowReels.Api.Handler.VideoStandards;
+using TelepathyLabs.ShowReels.Core.Log;
 
 namespace TelepathyLabs.ShowReels.Api.Controllers
 {
@@ -8,10 +9,12 @@ namespace TelepathyLabs.ShowReels.Api.Controllers
     [ApiController]
     public class VideoStandardController : ControllerBase
     {
+        private readonly ILoggerManager _logger;
         private readonly IVideoStandardGetHandler _getHandler;
 
-        public VideoStandardController(IVideoStandardGetHandler getHandler)
+        public VideoStandardController(IVideoStandardGetHandler getHandler, ILoggerManager logger)
         {
+            _logger = logger;
             _getHandler = getHandler;
         }
 

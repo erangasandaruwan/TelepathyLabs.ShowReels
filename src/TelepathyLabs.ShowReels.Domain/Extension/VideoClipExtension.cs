@@ -32,7 +32,6 @@ namespace TelepathyLabs.ShowReels.Domain.Extension
             return true;
         }
 
-
         public static bool IsValidFrameRate(this List<VideoClip> videoClips)
         {
             foreach (var videoClip in videoClips)
