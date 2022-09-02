@@ -1,0 +1,58 @@
+<div class="card mt-2">
+    <div class="card-body">
+      <div class="row gx-5">
+        <div class="col-3">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">Show Reel Name</th>
+                <td scope="row">{{showReel?.Name}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Show Reel Description</th>
+                <td scope="row">{{showReel?.Description}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Video Standard</th>
+                <td>{{getVideoDefinition(showReel?.VideoStandard)}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Video Definition</th>
+                <td>{{getVideoStandard(showReel?.VideoDefinition)}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Total Duration</th>
+                <td colspan="2">{{showReel?.TotalDuration }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-9">
+          <div class="p-3 border bg-light">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Clip Name</th>
+                  <th>Clip Description</th>
+                  <th>Video Standard</th>
+                  <th>Video Definition</th>
+                  <th>Start Time Code</th>
+                  <th>End Time Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let videoClip of showReel?.VideoClips">
+                  <td>{{videoClip?.Name}}</td>
+                  <td>{{videoClip?.Description}}</td>
+                  <td>{{getVideoStandard(videoClip?.VideoStandard)}}</td>
+                  <td>{{getVideoDefinition(videoClip?.VideoDefinition)}}</td>
+                  <td>{{videoClip?.StartTimeCode?.ToString }}</td>
+                  <td>{{videoClip?.EndTimeCode?.ToString }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

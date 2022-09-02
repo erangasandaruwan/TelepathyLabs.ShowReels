@@ -1,0 +1,121 @@
+<style>
+    #outer-show-reel {
+        border-radius: 3px;
+        border: 1px gray;
+        margin: 0 10 0 10;
+    }
+</style>
+<div id="#outer-show-reel">
+    <div class="light row gx-5">
+        <div class="col p-3">
+            <a type="button" class="btn btn-primary" routerLink="/list-show-list" routerLinkActive="active"
+                ariaCurrentWhenActive="page">
+                Go Back to Show Reel List
+            </a>
+        </div>
+    </div>
+
+    <form [formGroup]="showReelForm" (ngSubmit)="onSubmit()">
+        <div class="row mt-3">
+            <label for="name" class="col-2 col-form-label">Show Reel Name</label>
+            <div class="col-6">
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <label for="description" class="col-2 col-form-label">Show Reel Description</label>
+            <div class="col-6">
+                <input type="text" class="form-control" formControlName="description">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <label for="videoDefinition" class="col-2 col-form-label">Video Definition</label>
+            <div class="col-6">
+                <select class="form-select" aria-label="Video Definition" formControlName="videoDefinition">
+                    <option selected value="0">Select</option>
+                    <option *ngFor="let videoDefinition of videoDefinitions" value="{{videoDefinition.Key}}">
+                        {{videoDefinition.Value}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <label for="videoStandard" class="col-2 col-form-label">Video Standard</label>
+            <div class="col-6">
+                <select class="form-select" aria-label="Video Standard" formControlName="videoStandard">
+                    <option selected value="0">Select</option>
+                    <option *ngFor="let videoStandard of videoStandards" value="{{videoStandard.Key}}">
+                        {{videoStandard.Value}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <label class="col-2 col-form-label">Total Duration (HH:MM:ss:ff)</label>
+            <div class="col-6">
+                {{ totalTime.ToString }}
+            </div>
+        </div>
+
+        <br><br>
+        <div class="row mt-3">
+            <div class="col-3">
+                <h5>Clips</h5>
+            </div>
+        </div>
+
+        <div formArrayName="videoClips" class="row p-3 border bg-light">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Clip Name</th>
+                        <th>Clip Description</th>
+                        <th>Start Time Code</th>
+                        <th>End Time Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let videoClip of videoClips.controls; let i = index" [formGroupName]="i">
+                        <td> <input id="videoClipName-{{i}}" formControlName="clipName" type="text"
+                                class="form-control"></td>
+                        <td> <input id="videoClipDescription-{{i}}" formControlName="clipDescription" type="text"
+                                class="form-control"></td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">HH:</span>
+                                <input id="clipStartTimeCodeHours-{{i}}" formControlName="clipStartTimeCodeHours" type="number" class="form-control" placeholder="HH" aria-label="Hours">
+                                <span class="input-group-text">MM:</span>
+                                <input id="clipStartTimeCodeMinutes-{{i}}" formControlName="clipStartTimeCodeMinutes" type="number" class="form-control" placeholder="MM" aria-label="Minutes">
+                                <span class="input-group-text">ss:</span>
+                                <input id="clipStartTimeCodeSeconds-{{i}}" formControlName="clipStartTimeCodeSeconds" type="number" class="form-control" placeholder="ss" aria-label="Seconds">
+                                <span class="input-group-text">ff:</span>
+                                <input id="clipStartTimeCodeFrames-{{i}}" formControlName="clipStartTimeCodeFrames" type="number" class="form-control" placeholder="ff" aria-label="Frames">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">HH:</span>
+                                <input id="clipEndTimeCodeHours-{{i}}" formControlName="clipEndTimeCodeHours" type="number" class="form-control" placeholder="HH" aria-label="Hours">
+                                <span class="input-group-text">MM:</span>
+                                <input id="clipEndTimeCodeMinutes-{{i}}" formControlName="clipEndTimeCodeMinutes" type="number" class="form-control" placeholder="MM" aria-label="Minutes">
+                                <span class="input-group-text">ss:</span>
+                                <input id="clipEndTimeCodeSeconds-{{i}}" formControlName="clipEndTimeCodeSeconds" type="number" class="form-control" placeholder="ss" aria-label="Seconds">
+                                <span class="input-group-text">ff:</span>
+                                <input id="clipEndTimeCodeFrames-{{i}}" formControlName="clipEndTimeCodeFrames" type="number" class="form-control" placeholder="ff" aria-label="Frames">
+                            </div>
+                        </td>
+                        <td><button *ngIf="videoClips.length>1" type="button" class="btn btn-warn" (click)="removeClip(i)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-2">
+                <button type="button" class="btn btn-secondary" (click)="AddClip()">Add Clip</button>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-5" [disabled]="!showReelForm.valid">Submit</button>
+    </form>
+
+</div>

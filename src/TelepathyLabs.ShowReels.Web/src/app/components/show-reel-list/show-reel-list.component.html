@@ -1,0 +1,25 @@
+<style>
+   outer {
+    border: 1px solid gray;
+    width:80%;
+    padding: 10px;
+  }
+</style>
+<div class="border">
+    <div class="light row gx-5">
+      <div class="col p-3">
+        <a type="button" class="btn btn-primary"  routerLink="/create-show-reel" 
+        routerLinkActive="active" ariaCurrentWhenActive="page">
+            Create a new show reel
+        </a>
+      </div>
+    </div>
+    <div class="row gx-5">
+      <div class="col p-3">
+        Show Reels
+      </div>
+    </div>
+    <div class="row" *ngFor="let showReel of showReels">
+      <show-reel-info [showReel]="showReel" [videoDefinitions]="videoDefinitions" [videoStandards]="videoStandards"></show-reel-info>
+    </div> 
+</div>
