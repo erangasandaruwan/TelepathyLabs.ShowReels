@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Domain", "..\TelepathyLabs.ShowReels.Domain\TelepathyLabs.ShowReels.Domain.csproj", "{31B69031-66BF-47B3-A374-84423B5027F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelepathyLabs.ShowReels.Migrations", "..\TelepathyLabs.ShowReels.Migrations\TelepathyLabs.ShowReels.Migrations.csproj", "{7506B7C8-9B88-44A1-8D2F-60EB19D2CCF9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
