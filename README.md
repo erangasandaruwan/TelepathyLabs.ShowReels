@@ -8,9 +8,9 @@ Prerequisites & Tech stack
 ------------------------------------
 
 + Front-end 
-  + angular 14 with angular cli.
+  + angular 14 including **NgRx Store**.
 + Back-end
-  + dotnet core 3.1 with, **Fluent validation** & **AutoMapper**
+  + dotnet core 3.1 incluing **Fluent validation** & **AutoMapper** with **Nlog** logging
   + **MS SQL Server** & **Entity Core** 
 + Test
   + Unit test with **xUnit** & **Moq**
